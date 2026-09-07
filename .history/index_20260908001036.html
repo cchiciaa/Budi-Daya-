@@ -25,7 +25,7 @@
         }
         * { box-sizing: border-box; }
         html { scroll-behavior: smooth; }
-        body { margin: 0; color: var(--ink); background: var(--paper); font-family: var(--sans); line-height: 1.65; overflow-x: hidden; }
+        body { margin: 0; color: var(--ink); background: var(--paper); font-family: var(--sans); line-height: 1.65; }
         img { display: block; max-width: 100%; }
         a { color: inherit; text-decoration: none; }
         .container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
@@ -48,14 +48,12 @@
         .hero-grid { display: grid; grid-template-columns: 1.02fr .98fr; gap: 72px; align-items: center; padding: 72px 0 105px; position: relative; z-index: 1; }
         .hero h1 { max-width: 680px; margin: 15px 0 24px; font-size: clamp(3rem, 6.5vw, 6.6rem); letter-spacing: -.065em; }
         .hero h1 em { color: #a9d19e; font-style: normal; }
-        .hero h1 .usaha-highlight { color: #d63832; }
-        .hero h1 .selada-highlight { color: #9b4650; }
         .hero-lead { max-width: 610px; color: #e7f2e4; font-size: clamp(1.03rem, 1.8vw, 1.25rem); }
         .hero-note { display: flex; gap: 13px; margin: 31px 0; color: #e7f2e4; font-size: .9rem; }
         .hero-note strong { display: block; color: #fff; font-size: 1rem; }
         .check { color: #a9d19e; font-weight: 700; }
         .hero-photo { position: relative; }
-        .hero-photo img { width: 100%; height: auto; max-height: 590px; border-radius: 18px; object-fit: contain; object-position: center; background: var(--paper); border: 7px solid rgba(255,255,255,.2); }
+        .hero-photo img { width: 100%; height: 590px; border-radius: 190px 190px 18px 18px; object-fit: cover; object-position: center; border: 7px solid rgba(255,255,255,.2); }
         .photo-label { position: absolute; left: -31px; bottom: 30px; width: 160px; padding: 19px; border-radius: 12px; background: var(--orange); color: #fff; font-family: var(--serif); font-size: 1.4rem; line-height: 1.05; transform: rotate(-5deg); box-shadow: 10px 12px 0 rgba(13,44,36,.3); }
         .trust-line { display: flex; flex-wrap: wrap; gap: 12px 28px; margin-top: 36px; color: #d0e5cf; font-size: .82rem; }
         .intro { padding: 110px 0; background: var(--cream); }
@@ -120,16 +118,15 @@
         .archive-gallery .gallery-strip img:first-child { grid-column: span 2; grid-row: span 2; }
         .offer { padding: 115px 0; background: var(--forest); color: #fff; }
         .offer-grid { display: grid; grid-template-columns: .72fr 1.28fr; gap: 64px; align-items: start; }
-        .offer-grid > * { min-width: 0; }
         .offer h2 { margin: 12px 0 20px; }
         .offer p { color: #e0eedc; }
         .offer-list { display: grid; grid-template-columns: 1fr 1fr; gap: 11px; padding: 0; list-style: none; color: #e5f1e1; }
         .offer-list li::before { content: '✓'; margin-right: 9px; color: #a9d19e; }
-        .price-card { min-width: 0; padding: 34px; border-radius: 13px; background: var(--paper); color: var(--ink); text-align: center; box-shadow: 14px 14px 0 rgba(228,123,62,.75); }
+        .price-card { padding: 34px; border-radius: 13px; background: var(--paper); color: var(--ink); text-align: center; box-shadow: 14px 14px 0 rgba(228,123,62,.75); }
         .mid-offer { padding: 95px 0; background: var(--cream); }
         .mid-offer h2 { max-width: 700px; margin: 12px 0 38px; color: var(--forest); }
-        .price-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; min-width: 0; }
-        .price-option { min-width: 0; padding: 30px; border: 1px solid var(--line); border-radius: 12px; background: #fff; }
+        .price-options { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+        .price-option { padding: 30px; border: 1px solid var(--line); border-radius: 12px; background: #fff; }
         .price-option.featured { border: 3px solid var(--orange); box-shadow: 0 12px 28px rgba(228,123,62,.14); }
         .price-option h3 { margin: 0 0 8px; color: var(--forest); font-family: var(--serif); font-size: 1.65rem; }
         .price-option p { color: var(--muted); }
@@ -141,16 +138,13 @@
         .offer .price-options { margin-top: 35px; }
         .offer .price-option { background: #fff; }
         .offer .price-option .button { width: 100%; }
-        .offer .price-card .price-options { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: stretch; }
-        .offer .price-card .price-option { display: flex; min-height: 360px; flex-direction: column; padding: 24px 20px; }
-        .offer .price-card .price-option h3 { min-height: 3.1em; margin-bottom: 14px; font-size: 1.45rem; line-height: 1.12; }
-        .offer .price-card .price-option .old-price { font-size: .85rem; }
-        .offer .price-card .price-option .price { margin: 8px 0 12px; font-size: clamp(2.45rem, 4vw, 3.45rem); letter-spacing: -.04em; }
-        .offer .price-card .price-option p { min-height: 3.3em; margin-bottom: 18px; color: #34483d; font-size: .88rem; }
-        .offer .price-card .price-option .button { margin-top: auto; padding: 13px 12px; font-size: .92rem; }
+        .offer .price-card .price-options { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+        .offer .price-card .price-option { padding: 22px; }
+        .offer .price-card .price-option .price { font-size: 3.2rem; }
+        .offer .price-card .price-option p { margin-bottom: 10px; color: #34483d; font-size: .9rem; }
         .mid-offer .price-option > p { display: none; }
         .ebook-cover { position: relative; width: min(100%, 280px); aspect-ratio: 3 / 4; margin: -12px auto 30px; overflow: hidden; border-radius: 8px; background: var(--forest); box-shadow: 0 14px 28px rgba(13,44,36,.2); }
-        .ebook-cover img { width: 100%; height: 100%; object-fit: contain; background: var(--paper); }
+        .ebook-cover img { width: 100%; height: 100%; object-fit: cover; }
         .price-card h3 { margin-bottom: 8px; color: var(--forest); font-family: var(--serif); font-size: 2rem; }
         .price-card > p { color: #34483d; }
         .old-price { color: #909b94; text-decoration: line-through; }
@@ -178,7 +172,7 @@
             .hero-grid { padding: 50px 0 80px; }
             .hero h1 { font-size: clamp(3rem, 14vw, 5rem); }
             .hero-photo { max-width: 500px; margin: 0 auto; }
-            .hero-photo img { height: auto; max-height: none; }
+            .hero-photo img { height: 430px; }
             .intro, .mindset, .modules, .practical, .audience, .faq, .offer { padding: 75px 0; }
             .module-grid { grid-template-columns: 1fr 1fr; }
             .module:nth-child(2), .module:nth-child(5) { transform: none; }
@@ -204,7 +198,6 @@
             .archive-gallery .gallery-strip { grid-auto-rows: 125px; }
             .price-card { padding: 30px 22px; }
             .offer .price-card .price-options { grid-template-columns: 1fr; }
-            .offer .price-card .price-option { min-height: 0; }
         }
     </style>
 </head>
@@ -212,7 +205,7 @@
     <header class="hero">
         <div class="container">
             <nav class="nav"><a class="brand" href="#top"><span class="brand-mark"><span>✦</span></span> SELADA DARI RUMAH</a><span class="nav-tag">Panduan budidaya untuk pemula</span></nav>
-            <div class="hero-grid" id="top"><div><div class="eyebrow">Passive income & ketahanan pangan</div><h1>Ubah <em>Tabungan</em> menjadi <span class="usaha-highlight">Usaha</span> <span class="selada-highlight">Selada</span> dari rumah.</h1><p class="hero-lead">Mulai dari lahan kecil. Modal minim. Pelajari langkahnya dari nol hingga panen.</p><div class="hero-note"><span class="check">✦</span><div><strong>Panduan lengkap budidaya selada untuk pemula</strong>Dari membangun instalasi sampai belajar memasarkan hasil panen.</div></div><a class="button" href="#pricing">Saya mau mulai budidaya selada <span>↗</span></a><div class="trust-line"><span>✓ Praktis untuk pemula</span><span>✓ Bisa dimulai bertahap</span><span>✓ Akses konsultasi WhatsApp</span></div></div><div class="hero-photo"><img src="WhatsApp%20Image%202026-09-07%20at%2023.51.39.jpeg" alt="Cover ebook panduan budidaya selada"><div class="photo-label">Panduan<br>lengkap.</div></div></div>
+            <div class="hero-grid" id="top"><div><div class="eyebrow">Passive income & ketahanan pangan</div><h1>Ubah tabungan menjadi <em>usaha selada</em> dari rumah.</h1><p class="hero-lead">Mulai dari lahan kecil. Modal minim. Pelajari langkahnya dari nol hingga panen.</p><div class="hero-note"><span class="check">✦</span><div><strong>Panduan lengkap budidaya selada untuk pemula</strong>Dari membangun instalasi sampai belajar memasarkan hasil panen.</div></div><a class="button" href="#pricing">Saya mau mulai budidaya selada <span>↗</span></a><div class="trust-line"><span>✓ Praktis untuk pemula</span><span>✓ Bisa dimulai bertahap</span><span>✓ Akses konsultasi WhatsApp</span></div></div><div class="hero-photo"><img src="photo/WhatsApp%20Image%202026-09-07%20at%2018.20.49.jpeg" alt="Kebun selada hidroponik dalam greenhouse"><div class="photo-label">Mulai dari<br>rumah.</div></div></div>
         </div>
     </header>
     <main>
